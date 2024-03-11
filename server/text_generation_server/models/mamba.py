@@ -430,7 +430,7 @@ class Mamba(Model):
             dtype = torch.float32 if dtype is None else dtype
 
         tokenizer = AutoTokenizer.from_pretrained(
-            "EleutherAI/gpt-neox-20b",
+            model_id,
             revision=revision,
             padding_side="left",
             truncation_side="left",

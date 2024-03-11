@@ -206,7 +206,7 @@ class MambaModel(nn.Module):
         self.norm_f = FastRMSNorm.load(
             f"{prefix}.norm_f", weights, eps=config.layer_norm_epsilon
         )
-        self.lm_head = SpeculativeHead.load(config, f"{prefix}.embedding", weights)
+        self.lm_head = SpeculativeHead.load(config, f"lm_head", weights)
         self.config = config
 
     def forward(
