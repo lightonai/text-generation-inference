@@ -196,7 +196,7 @@ class MambaModel(nn.Module):
     def __init__(self, config, weights):
         super().__init__()
         prefix = "backbone"
-        self.embed_tokens = TensorParallelEmbedding(f"{prefix}.embedding", weights)
+        self.embed_tokens = TensorParallelEmbedding(f"{prefix}.embeddings", weights)
         self.blocks = nn.ModuleList(
             [
                 ResidualBlock(f"{prefix}.layers.{i}", config, weights, layer_id=i)

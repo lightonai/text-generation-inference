@@ -180,7 +180,7 @@ def get_model(
                 f"Could not determine model type for {model_id} revision {revision}"
             )
 
-    if model_type == "ssm":
+    if model_type == "ssm" or model_type == "mamba":
         return Mamba(
             model_id,
             revision,
